@@ -4,6 +4,8 @@ import './App.css'
 
 class BooksApp extends React.Component {
   state = {
+    title: "Ready Player One",
+    author: "Charlie Sipe",
     /**
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
@@ -45,7 +47,7 @@ class BooksApp extends React.Component {
             <div className="list-books-content">
               <div>
                 <div className="bookshelf">
-                  <h2 className="bookshelf-title">Currently Reading</h2>
+                  <h2 className="bookshelf-title">Currently Reading Yep</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                       <li>
@@ -88,7 +90,7 @@ class BooksApp extends React.Component {
                   </div>
                 </div>
                 <div className="bookshelf">
-                  <h2 className="bookshelf-title">Want to Read</h2>
+                  <h2 className="bookshelf-title">Want to Read Soon</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                       <li>
@@ -105,8 +107,8 @@ class BooksApp extends React.Component {
                               </select>
                             </div>
                           </div>
-                          <div className="book-title">1776</div>
-                          <div className="book-authors">David McCullough</div>
+                          <div className="book-title">{this.state.title}</div>
+                          <div className="book-authors">{this.state.author}</div>
                         </div>
                       </li>
                       <li>
@@ -131,7 +133,7 @@ class BooksApp extends React.Component {
                   </div>
                 </div>
                 <div className="bookshelf">
-                  <h2 className="bookshelf-title">Read</h2>
+                  <h2 className="bookshelf-title">Read Already</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                       <li>
