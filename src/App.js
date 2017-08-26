@@ -1,6 +1,7 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
+import Book from './book'
 
 class BooksApp extends React.Component {
   state = {
@@ -12,7 +13,7 @@ class BooksApp extends React.Component {
      * users can use the browser's back and forward buttons to navigate between
      * pages, as well as provide a good URL they can bookmark and share.
      */
-    showSearchPage: false
+    showSearchPage: true
   }
 
   render() {
@@ -82,7 +83,8 @@ class BooksApp extends React.Component {
                               </select>
                             </div>
                           </div>
-                          <div className="book-title">Ender's Game</div>
+
+                          <div className="book-title">Enders Game</div>
                           <div className="book-authors">Orson Scott Card</div>
                         </div>
                       </li>
@@ -125,7 +127,7 @@ class BooksApp extends React.Component {
                               </select>
                             </div>
                           </div>
-                          <div className="book-title">Harry Potter and the Sorcerer's Stone</div>
+                          <div className="book-title">Harry Potter and the Sorcerers Stone</div>
                           <div className="book-authors">J.K. Rowling</div>
                         </div>
                       </li>
@@ -136,6 +138,8 @@ class BooksApp extends React.Component {
                   <h2 className="bookshelf-title">Read Already</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
+                    <li><Book image="https://google.com" title="Charles Title" author="charles author"/></li>
+                    <li><Book image="https://google.com" title="The Hobbit" author="JRR"/></li>
                       <li>
                         <div className="book">
                           <div className="book-top">
@@ -168,7 +172,7 @@ class BooksApp extends React.Component {
                               </select>
                             </div>
                           </div>
-                          <div className="book-title">Oh, the Places You'll Go!</div>
+                          <div className="book-title">Oh, the Places Youll Go!</div>
                           <div className="book-authors">Seuss</div>
                         </div>
                       </li>
