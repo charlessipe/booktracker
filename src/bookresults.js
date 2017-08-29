@@ -1,9 +1,8 @@
-
 import React from 'react'
 import './App.css'
 import * as BooksAPI from './BooksAPI';
 
-class Book extends React.Component {
+class BookResults extends React.Component {
   state = {
     currentlyReading: "false",
     wantToRead: "false",
@@ -20,7 +19,7 @@ class Book extends React.Component {
   render() {
     return (
       <div>
-       <h2>A Book Component</h2>
+       <h2>Book Results</h2>
        <h3>{this.props.image}</h3>
        <h3>{this.props.title}</h3>
        <h3>{this.props.author}</h3>
@@ -42,4 +41,4 @@ class Book extends React.Component {
   }
 }
 
-export default Book;
+export default BookResults;
