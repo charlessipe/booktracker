@@ -4,15 +4,14 @@ import * as BooksAPI from './BooksAPI';
 
 class BookResults extends React.Component {
   state = {
-    currentlyReading: "false",
-    wantToRead: "false",
-    read: "false"
+    books: []
   }
 
   componentDidMount() {
-    BooksAPI.search("Astronomy",3).then((books) => {
+    BooksAPI.search("Web Development",3).then((books) => {
         console.log(books)
-        //this.setState({ books })
+        //this.setState(books)
+        this.setState({ books })
     })
   }
 
@@ -20,12 +19,8 @@ class BookResults extends React.Component {
     return (
       <div>
        <h2>Book Results</h2>
-       <h3>{this.props.image}</h3>
-       <h3>{this.props.title}</h3>
-       <h3>{this.props.author}</h3>
-       <h4>currentlyReading: {this.state.currentlyReading}</h4>
-       <h4>wantToRead: {this.state.wantToRead}</h4>
-       <h4>read: {this.state.read}</h4>
+       <h3>title: {this.state.books[1]}</h3>
+       <h3>author: </h3>
        <div className="book-shelf-changer">
          <h4>Hi</h4>
          <select>
