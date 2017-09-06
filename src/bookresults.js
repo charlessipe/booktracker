@@ -3,14 +3,17 @@ import './App.css'
 import * as BooksAPI from './BooksAPI';
 
 class BookResults extends React.Component {
-  state = {
-    books: []
+
+  constructor() {
+    super();
+    this.state = {
+      books: []
+    };
   }
 
   componentDidMount() {
     BooksAPI.search("Web Development",3).then((books) => {
         console.log(books)
-        //this.setState(books)
         this.setState({ books })
     })
   }
@@ -19,8 +22,8 @@ class BookResults extends React.Component {
     return (
       <div>
        <h2>Book Results</h2>
-       <h3>title: {this.state.books[1]}</h3>
-       <h3>author: </h3>
+       <h3>title: {this.state.books[0] && this.state.books[0].title}</h3>
+       <h3>author: {this.state.books[0] && this.state.books[0].authors[0]}</h3>
        <div className="book-shelf-changer">
          <h4>Hi</h4>
          <select>
@@ -31,6 +34,22 @@ class BookResults extends React.Component {
            <option value="none">None</option>
          </select>
         </div>
+
+        <div>
+        <h3>title: {this.state.books[1] && this.state.books[1].title}</h3>
+        <h3>author: {this.state.books[2] && this.state.books[1].authors[1]}</h3>
+        </div>
+
+        <div>
+        <h3>title: {this.state.books[2] && this.state.books[2].title}</h3>
+        <h3>author: {this.state.books[2] && this.state.books[2].authors[2]}</h3>
+        </div>
+
+        <div>
+        <h3>title: {this.state.books[3] && this.state.books[3].title}</h3>
+        <h3>author: {this.state.books[3] && this.state.books[3].authors[3]}</h3>
+        </div>
+
       </div>
     )
   }
