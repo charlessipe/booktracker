@@ -13,8 +13,11 @@ class BooksApp extends React.Component {
      * users can use the browser's back and forward buttons to navigate between
      * pages, as well as provide a good URL they can bookmark and share.
      */
-    showSearchPage: true
+    showSearchPage: true,
+    searchInput: "hi you"
   }
+
+
 
   render() {
     return (
@@ -32,8 +35,8 @@ class BooksApp extends React.Component {
                   However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
                   you don't find a specific author or title. Every search is limited by search terms.
                 */}
-                <input type="text" placeholder="Search by title or author"/>
-
+                <input onChange={(e) => this.setState({ searchInput: e.target.value })} type="text" placeholder="Search by title or author need to get this text into state?"/>
+                {this.state.searchInput}
               </div>
             </div>
             <div className="search-books-results">
