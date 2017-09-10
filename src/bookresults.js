@@ -1,18 +1,20 @@
 import React from 'react'
 import './App.css'
 import * as BooksAPI from './BooksAPI';
+import BooksApp from './App.js';
 
 class BookResults extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      books: []
+      books: [],
+      getSearchInput:  "web development"//this.state.searchInput
     };
   }
 
   componentDidMount() {
-    BooksAPI.search("Web Development",3).then((books) => {
+    BooksAPI.search(this.state.getSearchInput,3).then((books) => {
         console.log(books)
         this.setState({ books })
     })
@@ -48,6 +50,11 @@ class BookResults extends React.Component {
         <div>
         <h3>title: {this.state.books[3] && this.state.books[3].title}</h3>
         <h3>author: {this.state.books[3] && this.state.books[3].authors[3]}</h3>
+        </div>
+
+        <div>
+        <h3>title: {this.state.books[4] && this.state.books[4].title}</h3>
+        <h3>author: {this.state.books[4] && this.state.books[4].authors[4]}</h3>
         </div>
 
       </div>

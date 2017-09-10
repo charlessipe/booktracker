@@ -14,7 +14,7 @@ class BooksApp extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     showSearchPage: true,
-    searchInput: "hi you"
+    searchInput: "web development"
   }
 
 
@@ -48,12 +48,12 @@ class BooksApp extends React.Component {
         ) : (
           <div className="list-books">
             <div className="list-books-title">
-              <h1>MyReads</h1>
+              <h1>MyReads {this.state.searchInput}</h1>
             </div>
             <div className="list-books-content">
               <div>
                 <div className="bookshelf">
-                  <h2 className="bookshelf-title">Currently Reading Yep</h2>
+                  <h2 className="bookshelf-title">Currently Reading Yep </h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                       <li>
