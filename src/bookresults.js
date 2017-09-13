@@ -13,8 +13,10 @@ class BookResults extends React.Component {
     };
   }
 
+  //this.setState({ getSearchInput:  })
+
   componentDidMount() {
-    BooksAPI.search(this.state.getSearchInput,3).then((books) => {
+    BooksAPI.search(this.props.query,3).then((books) => {
         console.log(books)
         this.setState({ books })
     })
@@ -22,40 +24,109 @@ class BookResults extends React.Component {
 
   render() {
     return (
-      <div>
-       <h2>Book Results</h2>
-       <h3>title: {this.state.books[0] && this.state.books[0].title}</h3>
-       <h3>author: {this.state.books[0] && this.state.books[0].authors[0]}</h3>
-       <div className="book-shelf-changer">
-         <h4>Hi</h4>
-         <select>
-           <option value="none" disabled>Move to...</option>
-           <option value="currentlyReading">Currently Reading</option>
-           <option value="wantToRead">Want to Read</option>
-           <option value="read">Read</option>
-           <option value="none">None</option>
-         </select>
-        </div>
-
         <div>
-        <h3>title: {this.state.books[1] && this.state.books[1].title}</h3>
-        <h3>author: {this.state.books[2] && this.state.books[1].authors[1]}</h3>
-        </div>
+        <div className="list-books-content">
+          <div>
+            <div className="bookshelf">
+              <h2 className="bookshelf-title">Search Results </h2>
+              <div className="bookshelf-books">
+                <ol className="books-grid">
+                  <li>
+                    <div className="book">
+                      <div className="book-top">
+                        <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[0].imageLinks.smallThumbnail}/>
+                        <div className="book-shelf-changer">
+                          <select>
+                            <option value="none" disabled>Move to...</option>
+                            <option value="currentlyReading">Currently Reading</option>
+                            <option value="wantToRead">Want to Read</option>
+                            <option value="read">Read</option>
+                            <option value="none">None</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="book-title">{this.state.books[0] && this.state.books[0].title}</div>
+                      <div className="book-authors">{this.state.books[0] && this.state.books[0].authors[0]}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="book">
+                      <div className="book-top">
+                        <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[1].imageLinks.smallThumbnail}/>
+                        <div className="book-shelf-changer">
+                          <select>
+                            <option value="none" disabled>Move to...</option>
+                            <option value="currentlyReading">Currently Reading</option>
+                            <option value="wantToRead">Want to Read</option>
+                            <option value="read">Read</option>
+                            <option value="none">None</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="book-title">{this.state.books[0] && this.state.books[1].title}</div>
+                      <div className="book-authors">{this.state.books[0] && this.state.books[1].authors[0]}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="book">
+                      <div className="book-top">
+                        <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[2].imageLinks.smallThumbnail}/>
+                        <div className="book-shelf-changer">
+                          <select>
+                            <option value="none" disabled>Move to...</option>
+                            <option value="currentlyReading">Currently Reading</option>
+                            <option value="wantToRead">Want to Read</option>
+                            <option value="read">Read</option>
+                            <option value="none">None</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="book-title">{this.state.books[0] && this.state.books[2].title}</div>
+                      <div className="book-authors">{this.state.books[0] && this.state.books[2].authors[0]}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="book">
+                      <div className="book-top">
+                        <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[3].imageLinks.smallThumbnail}/>
+                        <div className="book-shelf-changer">
+                          <select>
+                            <option value="none" disabled>Move to...</option>
+                            <option value="currentlyReading">Currently Reading</option>
+                            <option value="wantToRead">Want to Read</option>
+                            <option value="read">Read</option>
+                            <option value="none">None</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="book-title">{this.state.books[0] && this.state.books[3].title}</div>
+                      <div className="book-authors">{this.state.books[0] && this.state.books[3].authors[0]}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="book">
+                      <div className="book-top">
+                        <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[4].imageLinks.smallThumbnail}/>
+                        <div className="book-shelf-changer">
+                          <select>
+                            <option value="none" disabled>Move to...</option>
+                            <option value="currentlyReading">Currently Reading</option>
+                            <option value="wantToRead">Want to Read</option>
+                            <option value="read">Read</option>
+                            <option value="none">None</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="book-title">{this.state.books[0] && this.state.books[4].title}</div>
+                      <div className="book-authors">{this.state.books[0] && this.state.books[4].authors[0]}</div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
 
-        <div>
-        <h3>title: {this.state.books[2] && this.state.books[2].title}</h3>
-        <h3>author: {this.state.books[2] && this.state.books[2].authors[2]}</h3>
-        </div>
-
-        <div>
-        <h3>title: {this.state.books[3] && this.state.books[3].title}</h3>
-        <h3>author: {this.state.books[3] && this.state.books[3].authors[3]}</h3>
-        </div>
-
-        <div>
-        <h3>title: {this.state.books[4] && this.state.books[4].title}</h3>
-        <h3>author: {this.state.books[4] && this.state.books[4].authors[4]}</h3>
-        </div>
+            </div>
+            </div>
+            </div>
 
       </div>
     )

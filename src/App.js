@@ -42,7 +42,7 @@ class BooksApp extends React.Component {
             <div className="search-books-results">
               <ol className="books-grid"></ol>
               <p>Place search results books here!</p>
-              <BookResults/>
+              <BookResults query={this.state.searchInput}/>
             </div>
           </div>
         ) : (
