@@ -9,11 +9,18 @@ class BookResults extends React.Component {
     super();
     this.state = {
       books: [],
-      getSearchInput:  "web development"//this.state.searchInput
+      getSearchInput:  "web development",//this.state.searchInput
+      selectedBookState: "want to read"
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   //this.setState({ getSearchInput:  })
+
+  handleChange(event) {
+    this.setState({selectedBookState: event.target.value});
+  }
 
   componentDidMount() {
     BooksAPI.search(this.props.query,3).then((books) => {
@@ -28,7 +35,7 @@ class BookResults extends React.Component {
         <div className="list-books-content">
           <div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Search Results </h2>
+              <h2 className="bookshelf-title">Search Results {this.state.selectedBookState}</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   <li>
@@ -36,7 +43,7 @@ class BookResults extends React.Component {
                       <div className="book-top">
                         <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[0].imageLinks.smallThumbnail}/>
                         <div className="book-shelf-changer">
-                          <select>
+                          <select value={this.state.selectedBookState} onChange={this.handleChange}>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
@@ -54,7 +61,7 @@ class BookResults extends React.Component {
                       <div className="book-top">
                         <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[1].imageLinks.smallThumbnail}/>
                         <div className="book-shelf-changer">
-                          <select>
+                          <select value={this.state.selectedBookState} onChange={this.handleChange}>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
@@ -72,7 +79,7 @@ class BookResults extends React.Component {
                       <div className="book-top">
                         <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[2].imageLinks.smallThumbnail}/>
                         <div className="book-shelf-changer">
-                          <select>
+                          <select value={this.state.selectedBookState} onChange={this.handleChange}>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
@@ -90,7 +97,7 @@ class BookResults extends React.Component {
                       <div className="book-top">
                         <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[3].imageLinks.smallThumbnail}/>
                         <div className="book-shelf-changer">
-                          <select>
+                          <select value={this.state.selectedBookState} onChange={this.handleChange}>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
@@ -108,7 +115,7 @@ class BookResults extends React.Component {
                       <div className="book-top">
                         <img className="book-cover" style={{ width: 128, height: 193}} src={this.state.books[0] && this.state.books[4].imageLinks.smallThumbnail}/>
                         <div className="book-shelf-changer">
-                          <select>
+                          <select value={this.state.selectedBookState} onChange={this.handleChange}>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
