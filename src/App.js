@@ -14,7 +14,8 @@ class BooksApp extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     showSearchPage: true,
-    searchInput: "web development"
+    searchInput: "web development",
+    selectedBookState: "n1"
   }
 
 
@@ -42,13 +43,13 @@ class BooksApp extends React.Component {
             <div className="search-books-results">
               <ol className="books-grid"></ol>
               <p>Place search results books here!</p>
-              <BookResults query={this.state.searchInput}/>
+              <BookResults query={this.state.searchInput} currentBookState={this.state.selectedBookState}/>
             </div>
           </div>
         ) : (
           <div className="list-books">
             <div className="list-books-title">
-              <h1>MyReads {this.state.searchInput}</h1>
+              <h1>MyReads {this.state.searchInput} {this.state.selectedBookState} {this.props.currentBookState}</h1>
             </div>
             <div className="list-books-content">
               <div>
