@@ -20,7 +20,7 @@ class Book extends React.Component {
   render() {
     return (
       <div>
-       <h2>A Book Component</h2>
+       <h2>My Book Component</h2>
        <h3>{this.props.image}</h3>
        <h3>{this.props.title}</h3>
        <h3>{this.props.author}</h3>

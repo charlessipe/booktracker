@@ -10,7 +10,7 @@ class BookResults extends React.Component {
     this.state = {
       books: [],
       getSearchInput:  "web development",//this.state.searchInput
-      selectedBookState: "want to read",
+      selectedBookState: "State of book",
       selectedBook: "book1"
     };
 
@@ -36,7 +36,7 @@ class BookResults extends React.Component {
         <div className="list-books-content">
           <div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Search Results {this.state.selectedBookState} {this.state.selectedBook}</h2>
+              <h2 className="bookshelf-title">Search Results - Selected Book State: {this.state.selectedBookState} {this.state.selectedBook}</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   <li>
