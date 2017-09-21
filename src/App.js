@@ -3,6 +3,9 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Book from './book'
 import BookResults from './bookresults.js'
+import CurrentlyReading from './currentlyreading.js'
+import WantToRead from './wanttoreadsoon.js'
+import AlreadyRead from './alreadyread.js'
 
 class BooksApp extends React.Component {
 
@@ -62,6 +65,10 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
+                <CurrentlyReading/>
+                <WantToRead/>
+                <AlreadyRead/>
+
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading {this.state.selectedBookState}</h2>
                   <div className="bookshelf-books">
