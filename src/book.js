@@ -10,34 +10,28 @@ class Book extends React.Component {
     read: "false"
   }
 
-  componentDidMount() {
-    BooksAPI.search("Astronomy",3).then((books) => {
-        console.log(books)
-        //this.setState({ books })
-    })
-  }
-
   render() {
     return (
+
       <div>
-       <h2>My Book Component</h2>
-       <h3>{this.props.image}</h3>
-       <h3>{this.props.title}</h3>
-       <h3>{this.props.author}</h3>
-       <h4>currentlyReading: {this.state.currentlyReading}</h4>
-       <h4>wantToRead: {this.state.wantToRead}</h4>
-       <h4>read: {this.state.read}</h4>
-       <div className="book-shelf-changer">
-         <h4>Hi</h4>
-         <select>
-           <option value="none" disabled>Move to...</option>
-           <option value="currentlyReading">Currently Reading</option>
-           <option value="wantToRead">Want to Read</option>
-           <option value="read">Read</option>
-           <option value="none">None</option>
-         </select>
+      <div className="book">
+        <div className="book-top">
+          <div className="book-cover" style={{ width: 128, height: 174, backgroundImage: 'url("http://books.google.com/books/content?id=1q_xAwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE712CA0cBYP8VKbEcIVEuFJRdX1k30rjLM29Y-dw_qU1urEZ2cQ42La3Jkw6KmzMmXIoLTr50SWTpw6VOGq1leINsnTdLc_S5a5sn9Hao2t5YT7Ax1RqtQDiPNHIyXP46Rrw3aL8&source=gbs_api")' }}></div>
+          <div className="book-shelf-changer">
+            <select value={this.state.selectedBookState} onChange={this.handleChange}>
+              <option value="none" disabled>Move to...</option>
+              <option value="currentlyReading">Currently Reading</option>
+              <option value="wantToRead">Want to Read</option>
+              <option value="read">Read</option>
+              <option value="none">None</option>
+            </select>
+          </div>
         </div>
+        <div className="book-title">{this.props.title}</div>
+        <div className="book-authors">{this.props.author}</div>
       </div>
+      </div>
+
     )
   }
 }
