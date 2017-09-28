@@ -6,10 +6,7 @@ class CurrentlyReading extends React.Component {
   constructor() {
     super();
     this.state = {
-    currentlyReading: "false",
-    wantToRead: "false",
-    read: "false",
-    selectedBookState: "currentlyreadingit"
+      selectedBookState: "currentlyreadingit"
     }
 
   this.handleChange = this.handleChange.bind(this);
