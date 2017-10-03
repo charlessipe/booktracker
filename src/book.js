@@ -11,6 +11,7 @@ class Book extends React.Component {
       currentlyReading: "false",
       wantToRead: "false",
       read: "false",
+      currentBookState: "awesome",
       selectedBookState: "alreadyreadit"
     }
     this.handleChange = this.handleChange.bind(this);
@@ -18,6 +19,7 @@ class Book extends React.Component {
 
   handleChange(event) {
     this.props.setState({selectedBookState: event.target.value});
+    this.state.setState({currentBookState: event.target.value});
   }
 
   render() {
@@ -39,6 +41,7 @@ class Book extends React.Component {
         </div>
         <div className="book-title">{this.props.title}</div>
         <div className="book-authors">{this.props.author}</div>
+        <div className="current-book-state">{this.state.currentBookState}</div>
       </div>
       </div>
 
